@@ -1,0 +1,7 @@
+classes= 1
+train  = /home/qilb/home/qilb/project/darknet-master/2007_train.txt
+valid  = /home/qilb/home/qilb/project/darknet-master/2007_val.txt
+#valid = data/coco_val_5k.list
+names = data/fall.names
+backup = /home/qilb/home/qilb/project/darknet-master/backup
+

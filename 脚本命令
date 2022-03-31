@@ -1,0 +1,8 @@
+cd VOCdevkit   python make_train_val_test_set.py
+python voc_label.py 
+./darknet detector calc_anchors cfg/fall.data  -num_of_clusters 9 -width 608 -height 608
+./darknet detector train cfg/fall.data cfg/yolov4-fall.cfg yolov4.conv.137 -gpus 0
+
+./darknet detector map ./cfg/fall.data ./cfg/yolov4-fall.cfg ./backup/yolov4-fall_3000.weights
+./darknet detector demo ./cfg/fall.data ./cfg/yolov4-fall.cfg ./backup/yolov4-fall_2000.weights ./data/video1.avi -i 0 -thresh 0.5
+./darknet detector test cfg/fall.data cfg/yolov4-fall.cfg ./backup/yolov4-fall_2000.weights -ext_output data/1.jpg -i 0 -thresh 0.9

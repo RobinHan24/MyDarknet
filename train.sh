@@ -1,0 +1,1 @@
+./darknet detector train cfg/fall.data cfg/yolov4-fall.cfg yolov4.conv.137 -gpus 0
